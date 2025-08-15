@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Celebrate Pakistan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background effects -->
+  <div class="stars"></div>
+  <canvas id="fireworks"></canvas>
+  <canvas id="confetti"></canvas>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container">
+      <div class="brand" aria-label="Pakistan">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="11" stroke="#86efac" stroke-width="2" />
+          <path d="M15.5 6.5a5.5 5.5 0 1 0 0 11 6 6 0 1 1 0-11Z" fill="#86efac"/>
+        </svg>
+        <span id="brandText">Pakistan Day</span>
+      </div>
+      <span class="spacer"></span>
+      <div class="toolbar">
+        <button id="toggleLang" title="Urdu / English"><span>اردو / EN</span></button>
+        <button id="shareBtn" title="Share" class="btn">🔗 Share</button>
+        <button id="celebrateBtn" class="primary">
+          🎉 <span data-en>Celebrate</span><span data-ur hidden>جشن منائیں</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">Copied!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
