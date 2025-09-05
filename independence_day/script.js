@@ -3,7 +3,7 @@ const $ = (sel, ctx=document) => ctx.querySelector(sel);
 // Fireworks setup
 const fw = $('#fireworks');
 const ctx = fw.getContext('2d');
-const DPR = Math.min(2, window.devicePixelRatio||1);
+const DPR = Math.min(2, window.devicePixelRatio||1); 
 function resizeCanvas(){
   fw.width = Math.floor(innerWidth*DPR);
   fw.height = Math.floor(innerHeight*DPR);

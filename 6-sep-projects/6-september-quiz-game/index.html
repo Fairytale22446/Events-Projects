@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defence Day Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <!------------------------------------ Intro Page -------------------------------------------------->\
+
+    <div class="intro-container" id="intro-container">
+      <h1>🇵🇰 Defence Day Special 🇵🇰</h1>
+      <p>Enter your name and share a line about Pakistan 💚</p>
+      <input type="text" id="username" placeholder="Your Name" />
+      <textarea
+        id="userline"
+        placeholder="Write a line about Pakistan"
+      ></textarea>
+      <button id="start-btn">Start Quiz</button>
+    </div>
+
+    <!------------------------------------ Quiz Page ------------------------------------------------->
+
+    <div class="quiz-container hide" id="quiz-container">
+      <h1>Defence Day Quiz</h1>
+      <div id="progress"><div id="progress-bar"></div></div>
+      <div id="question-container">
+        <div id="question">Question text</div>
+        <div id="answer-buttons" class="btn-container"></div>
+      </div>
+      <div id="score">Score: 0</div>
+      <button id="next-btn" class="hide">Next</button>
+      <div id="result" class="hide">
+        <h2>Proud Pakistani! 🇵🇰</h2>
+        <p id="final-message"></p>
+        <div class="flag-animation"></div>
+        <button id="restart-btn" class="hide">Restart Quiz</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

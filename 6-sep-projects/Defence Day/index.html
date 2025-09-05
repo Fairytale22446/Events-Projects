@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>6 September – Defence Day Tribute</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="Interactive Pakistan Army tribute page with animated flag header, 1965 war timeline, lightbox gallery, and green/white particle background."
+    />
+    <style></style>
+  </head>
+  <body>
+    <canvas id="bgCanvas"></canvas>
+    <div class="container">
+      <header class="hero" aria-label="Defence Day Animated Header">
+        <div class="hero-content">
+          <div>
+            <h1 class="title">6 September – Defence Day 🇵🇰</h1>
+            <p>“Saluting our heroes, guarding our tomorrow.”</p>
+            <p class="subtitle">
+              Interactive tribute page featuring an animated Pakistan flag, a
+              clickable 1965 timeline, and a lightbox gallery for the
+              <strong>Army</strong>, <strong>Air Force</strong>, and
+              <strong>Navy</strong>.
+            </p>
+            <div class="badges">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">Accessible</span>
+              <span class="badge">Responsive</span>
+            </div>
+          </div>
+          <div class="flag-wrap" aria-hidden="true">
+            <!-- Simple SVG flag of Pakistan with gentle wave -->
+            <svg
+              class="flag"
+              viewBox="0 0 320 200"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Pakistan Flag"
+            >
+              <defs>
+                <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#1a7a5a" />
+                  <stop offset="100%" stop-color="#0e5a43" />
+                </linearGradient>
+              </defs>
+              <!-- White stripe -->
+              <rect width="64" height="200" fill="#ffffff" />
+              <!-- Green field -->
+              <rect x="64" width="256" height="200" fill="url(#g)" />
+              <!-- Crescent and star -->
+              <g transform="translate(190,98) rotate(-12)">
+                <path
+                  d="M0-48a48 48 0 1 0 0 96 36 36 0 1 1 0-72z"
+                  fill="#ffffff"
+                />
+                <polygon
+                  points="0,-20 4,-6 18,-6 7,2 11,16 0,7 -11,16 -7,2 -18,-6 -4,-6"
+                  fill="#ffffff"
+                  transform="translate(30,0) rotate(18) scale(0.9)"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- Timeline Section -->
+      <section class="card" aria-labelledby="timeline-title">
+        <h2 id="timeline-title">1965 War – Interactive Timeline</h2>
+        <div class="timeline" id="timeline">
+          <!-- Items will be injected by JS for easier editing -->
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="card" aria-labelledby="gallery-title">
+        <h2 id="gallery-title">Forces Gallery – Army, Air Force, Navy</h2>
+        <div class="gallery" id="gallery">
+          <!-- Thumbnails injected by JS -->
+        </div>
+      </section>
+
+      <footer>
+        Built with ❤️ for Pakistan. “Our martyrs live on, in every breath of our
+        freedom.”
+      </footer>
+    </div>
+
+    <!-- Lightbox -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      aria-modal="true"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="lb-inner">
+        <img class="lb-img" id="lbImg" alt="Selected" />
+        <div class="lb-caption" id="lbCaption"></div>
+        <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">
+          &#10094;
+        </button>
+        <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">
+          &#10095;
+        </button>
+        <button class="lb-btn lb-close" id="lbClose" aria-label="Close">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

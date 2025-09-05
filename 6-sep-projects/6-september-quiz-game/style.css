@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(-45deg, #0b6623, #ffffff, #0b6623, #e6e6e6);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.quiz-container,
+.intro-container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1.5s ease;
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+#progress {
+  height: 10px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+
+#question-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+}
+
+#question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+button:hover,
+button:focus {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.35);
+  outline: none;
+}
+
+button.correct {
+  background-color: #4caf50;
+  color: #fff;
+  animation: correctAnim 0.5s;
+}
+
+button.wrong {
+  background-color: #f44336;
+  color: #fff;
+  animation: wrongAnim 0.5s;
+}
+
+#next-btn,
+#restart-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  background: #4caf50;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#next-btn:hover,
+#restart-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes correctAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wrongAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#result {
+  text-align: center;
+}
+
+#result h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffeb3b;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.flag-animation {
+  margin: 0 auto;
+  width: 120px;
+  height: 70px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg")
+    no-repeat center;
+  background-size: cover;
+  animation: wave 1s infinite alternate;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #4caf50;
+  top: -10px;
+  animation: fall 3s linear infinite;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.intro-container input,
+.intro-container textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.intro-container button {
+  padding: 12px 25px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.intro-container button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  #question {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
